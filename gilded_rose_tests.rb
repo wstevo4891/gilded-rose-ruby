@@ -9,6 +9,34 @@ class GildedRoseTests < Test::Unit::TestCase
     puts ''
   end
 
+  def test_foo_quality_zero
+    puts __method__
+    item = gilded_item('Foo', 0, 0)
+
+    assert_equal 0, item.quality
+  end
+
+  def test_foo_quality_positive
+    puts __method__
+    item = gilded_item('Foo', 0, 5)
+
+    assert_equal 3, item.quality
+  end
+
+  def test_foo_sell_in_zero
+    puts __method__
+    item = gilded_item('Foo', 0, 0)
+
+    assert_equal(-1, item.sell_in)
+  end
+
+  def test_foo_sell_in_positive
+    puts __method__
+    item = gilded_item('Foo', 12, 0)
+
+    assert_equal(11, item.sell_in)
+  end
+
   def test_brie_quality_zero
     puts __method__
     item = gilded_item('Aged Brie', 0, 0)
@@ -42,6 +70,20 @@ class GildedRoseTests < Test::Unit::TestCase
     item = gilded_item('Sulfuras, Hand of Ragnaros', 0, 0)
 
     assert_equal(0, item.quality)
+  end
+
+  def test_sulfuras_quality_positive
+    puts __method__
+    item = gilded_item('Sulfuras, Hand of Ragnaros', 0, 5)
+
+    assert_equal(5, item.quality)
+  end
+
+  def test_sulfuras_sell_in_zero
+    puts __method__
+    item = gilded_item('Sulfuras, Hand of Ragnaros', 0, 0)
+
+    assert_equal(0, item.sell_in)
   end
 
   def test_sulfuras_sell_in_twelve
