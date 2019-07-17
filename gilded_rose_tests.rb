@@ -58,7 +58,7 @@ class GildedRoseTests < Test::Unit::TestCase
     assert_equal(-1, item.sell_in)
   end
 
-  def test_brie_sell_in_twelve
+  def test_brie_sell_in_over_eleven
     puts __method__
     item = gilded_item('Aged Brie', 12, 0)
 

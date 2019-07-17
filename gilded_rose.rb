@@ -17,11 +17,10 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
+
       if item.name != BRIE && item.name != BACKSTAGE
         if item.quality.positive?
-          if item.name != SULFURAS
-            item.subtract_quality
-          end
+          item.subtract_quality if item.name != SULFURAS
         end
       elsif item.quality < 50
         item.add_quality
@@ -39,19 +38,20 @@ class GildedRose
 
       if item.sell_in.negative?
         if item.name != BRIE
-          if item.name != BACKSTAGE
+          if item.name == BACKSTAGE
+            item.negate_quality
+          else
             if item.quality.positive?
               if item.name != SULFURAS
                 item.subtract_quality
               end
             end
-          else
-            item.negate_quality
           end
         elsif item.quality < 50
           item.add_quality
         end
       end
+
     end
   end
 end
