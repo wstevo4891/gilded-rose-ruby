@@ -20,28 +20,28 @@ class GildedRose
       if item.name != BRIE && item.name != BACKSTAGE
         if item.quality > 0
           if item.name != SULFURAS
-            item.quality = item.quality - 1
+            item.subtract_quality
           end
         end
       elsif item.quality < 50
-        item.quality = item.quality + 1
+        item.add_quality
 
         if item.name == BACKSTAGE
           if item.sell_in < 11
             if item.quality < 50
-              item.quality = item.quality + 1
+              item.add_quality
             end
           end
           if item.sell_in < 6
             if item.quality < 50
-              item.quality = item.quality + 1
+              item.add_quality
             end
           end
         end
       end
 
       if item.name != SULFURAS
-        item.sell_in = item.sell_in - 1
+        item.subtract_sell_in
       end
 
       if item.sell_in < 0
@@ -49,17 +49,14 @@ class GildedRose
           if item.name != BACKSTAGE
             if item.quality > 0
               if item.name != SULFURAS
-                item.quality = item.quality - 1
+                item.subtract_quality
               end
             end
           else
-            item.quality = item.quality - item.quality
+            item.negate_quality
           end
         elsif item.quality < 50
-          # item.add_quality
-          if item.quality < 50
-            item.quality = item.quality + 1
-          end
+          item.add_quality
         end
       end
     end

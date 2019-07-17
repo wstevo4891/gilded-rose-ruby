@@ -23,7 +23,7 @@ class Item
     @quality -= @quality
   end
 
-  def qual_under_fifty?
-    @quality < 50
+  def subtract_sell_in
+    @sell_in -= 1
   end
 end
