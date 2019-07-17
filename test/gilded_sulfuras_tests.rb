@@ -34,4 +34,11 @@ class GildedSulfurasTests < GildedRoseTest
 
     assert_equal(12, item.sell_in)
   end
+
+  def test_sulfuras_sell_in_negative
+    puts __method__
+    item = gilded_item('Sulfuras, Hand of Ragnaros', -10, 0)
+
+    assert_equal(-10, item.sell_in)
+  end
 end
