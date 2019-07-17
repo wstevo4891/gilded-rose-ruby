@@ -37,6 +37,20 @@ class GildedRoseTests < Test::Unit::TestCase
     assert_equal(11, item.sell_in)
   end
 
+  def test_sulfuras_quality_zero
+    puts __method__
+    item = gilded_item('Sulfuras, Hand of Ragnaros', 0, 0)
+
+    assert_equal(0, item.quality)
+  end
+
+  def test_sulfuras_sell_in_twelve
+    puts __method__
+    item = gilded_item('Sulfuras, Hand of Ragnaros', 12, 0)
+
+    assert_equal(12, item.sell_in)
+  end
+
   private
 
   def gilded_item(name, sell_in, quality)
