@@ -1,11 +1,12 @@
-# gilded_brie_tests.rb
+# test/gilded_backstage_tests.rb
 
-require File.join(File.dirname(__FILE__), 'test_helper')
+require './test/test_helper'
 
 ##
-# Test the GildedRose on Items with name: 'Aged Brie'
+# Test the GildedRose on Items with name:
+# 'Backstage passes to a TAFKAL80ETC concert'
 #
-class GildedBrieTests < GildedRoseTest
+class GildedBackstageTests < GildedRoseTest
   def test_brie_quality_zero
     puts __method__
     item = gilded_item('Aged Brie', 0, 0)

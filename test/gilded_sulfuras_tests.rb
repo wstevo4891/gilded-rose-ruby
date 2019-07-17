@@ -1,9 +1,10 @@
 # gilded_sulfuras_tests.rb
 
-require File.join(File.dirname(__FILE__), 'test_helper')
+require './test/test_helper'
 
 ##
-# Test the GildedRose on Items with name: 'Sulfuras, Hand of Ragnaros'
+# Test the GildedRose on Items with name:
+# 'Sulfuras, Hand of Ragnaros'
 #
 class GildedSulfurasTests < GildedRoseTest
   def test_sulfuras_quality_zero

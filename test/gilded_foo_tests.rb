@@ -1,10 +1,11 @@
 # gilded_foo_tests.rb
 
-require File.join(File.dirname(__FILE__), 'test_helper')
+require './test/test_helper'
 
 ##
 # Test the GildedRose on Items with a name that
-# is not one of the three constants
+# is not one of the three constants.
+# name: 'Foo'
 #
 class GildedFooTests < GildedRoseTest
   def test_foo_quality_zero

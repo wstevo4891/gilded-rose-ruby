@@ -1,4 +1,8 @@
-require File.join(File.dirname(__FILE__), 'gilded_rose')
+# gilded_rose_spec.rb
+
+require './item'
+require './gilded_rose'
+require 'test/spec'
 
 describe GildedRose do
 

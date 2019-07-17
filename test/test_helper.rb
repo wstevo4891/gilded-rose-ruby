@@ -1,7 +1,7 @@
 # test_helper.rb
 
-require File.join(File.dirname(__FILE__), 'item')
-require File.join(File.dirname(__FILE__), 'gilded_rose')
+require './item'
+require './gilded_rose'
 require 'test/unit'
 
 # Parent Class for all Gilded Rose Tests
