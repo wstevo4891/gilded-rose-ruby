@@ -17,21 +17,26 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
-
+      # =====================
+      # BRIE
+      # =====================
       # if item.name == BRIE
       #   if item.quality < 50
       #     item.add_quality
       #   end
-
+      #
       #   item.subtract_sell_in
-
+      #
       #   next unless item.sell_in.negative?
-
+      #
       #   if item.quality < 50
       #     item.add_quality
       #   end
       # end
 
+      # =====================
+      # BACKSTAGE
+      # =====================
       # if item.name == BACKSTAGE
       #   if item.quality < 50
       #     item.add_quality
@@ -39,18 +44,24 @@ class GildedRose
       #       item.add_quality
       #     end
       #   end
-
+      #
       #   item.subtract_sell_in
-
+      #
       #   next unless item.sell_in.negative?
-
+      #
       #   item.negate_quality
       # end
 
+      # =====================
+      # SULFURAS
+      # =====================
       # if item.name == SULFURAS
       #   # Absolutely nothing happens!
       # end
 
+      # =====================
+      # Foo
+      # =====================
       # if item.name == 'Foo'
       #   if item.quality.positive?
       #     item.subtract_quality
@@ -64,6 +75,8 @@ class GildedRose
       #     item.subtract_quality
       #   end
       # end
+
+      next if item.name == SULFURAS
 
       if item.name != BRIE && item.name != BACKSTAGE
         if item.quality.positive?
