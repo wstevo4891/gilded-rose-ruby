@@ -40,10 +40,8 @@ class GildedRose
         if item.name != BRIE
           if item.name == BACKSTAGE
             item.negate_quality
-          elsif item.quality.positive?
-            if item.name != SULFURAS
-              item.subtract_quality
-            end
+          elsif item.quality.positive? && item.name != SULFURAS
+            item.subtract_quality
           end
         elsif item.quality < 50
           item.add_quality

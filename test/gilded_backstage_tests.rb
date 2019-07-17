@@ -7,31 +7,31 @@ require './test/test_helper'
 # 'Backstage passes to a TAFKAL80ETC concert'
 #
 class GildedBackstageTests < GildedRoseTest
-  def test_brie_quality_zero
+  def test_backstage_quality_zero
     puts __method__
-    item = gilded_item('Aged Brie', 0, 0)
+    item = gilded_item('Backstage passes to a TAFKAL80ETC concert', 0, 0)
 
-    assert_equal 2, item.quality
+    assert_equal(0, item.quality)
   end
 
-  def test_brie_quality_over_fifty
+  def test_backstage_quality_under_fifty
     puts __method__
-    item = gilded_item('Aged Brie', 0, 55)
+    item = gilded_item('Backstage passes to a TAFKAL80ETC concert', 0, 10)
 
-    assert_equal 55, item.quality
+    assert_equal(0, item.quality)
   end
 
-  def test_brie_sell_in_zero
+  def test_backstage_quality_over_fifty
     puts __method__
-    item = gilded_item('Aged Brie', 0, 0)
+    item = gilded_item('Backstage passes to a TAFKAL80ETC concert', 0, 55)
+
+    assert_equal(0, item.quality)
+  end
+
+  def test_backstage_sell_in_zero_all
+    puts __method__
+    item = gilded_item('Backstage passes to a TAFKAL80ETC concert', 0, 0)
 
     assert_equal(-1, item.sell_in)
-  end
-
-  def test_brie_sell_in_over_eleven
-    puts __method__
-    item = gilded_item('Aged Brie', 12, 0)
-
-    assert_equal(11, item.sell_in)
   end
 end
